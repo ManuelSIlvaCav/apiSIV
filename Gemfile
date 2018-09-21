@@ -14,6 +14,8 @@ gem 'puma', '~> 3.11'
 #Gem for opening access files
 gem 'mdb'
 gem 'rufus-scheduler'
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
