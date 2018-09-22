@@ -7,11 +7,13 @@ class HelloWorld
 
   def perform
     params = Hash.new
-    db = Mdb.open("../../cotizaC.mdb")
-    #db = Mdb.open(ruta absoluta en servidor)
+    db = Mdb.open('/myapp/cotizaC.mdb')
+    lista = Sc.all
+    #db = Mdb.open(ruta absoluta)
     scs = db[:sc]
     scs.each do |row|
-      if Sc.where(:siv_id => row[:numsiv]).empty?
+      # p row
+      if lista.where(:siv_id => row[:numsiv]).empty?
         params[:siv_id] = row[:numsiv]
         params[:qad_id] = row[:codigoqad]#row[:numqad]
         params[:rut] = row[:rutc]
