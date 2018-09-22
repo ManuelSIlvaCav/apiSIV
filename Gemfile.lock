@@ -165,8 +165,13 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.1)
   rufus-scheduler
+<<<<<<< HEAD
   sidekiq (~> 5.2, >= 5.2.2)
   sidekiq-scheduler (~> 3.0)
+=======
+  sidekiq
+  sidekiq-scheduler
+>>>>>>> manubranch
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
