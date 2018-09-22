@@ -4,7 +4,14 @@ require 'rubygems'
 
 class HelloWorld
   include Sidekiq::Worker
-
+  #TABLAS CON info
+  #   # clientesn
+  #   # clientesSIV
+  #   # entregas
+  #   # historial, historialc,
+  #   # importasc1,2,3
+  #   # pc, pp
+  #   #sc y sc2 ---> Importante
   def perform
     params = Hash.new
     db = Mdb.open("../../cotizaC.mdb")
