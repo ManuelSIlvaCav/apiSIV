@@ -4,7 +4,14 @@ require 'rubygems'
 
 class HelloWorld
   include Sidekiq::Worker
-
+  #TABLAS CON info
+  #   # clientesn
+  #   # clientesSIV
+  #   # entregas
+  #   # historial, historialc,
+  #   # importasc1,2,3
+  #   # pc, pp
+  #   #sc y sc2 ---> Importante
   def perform
     params = Hash.new
     db = Mdb.open("../../cotizaC.mdb")
@@ -24,6 +31,8 @@ class HelloWorld
         params[:sub_kind] = row[:subtipoxx]
         params[:materials] = row[:materiales]
         params[:structure] = row[:estructurap]
+        params[:fechacreacion] = row[:fechacrea]
+        params[:fechaval] = row[:fechaval]
         Sc.create(params)
       end
     end
