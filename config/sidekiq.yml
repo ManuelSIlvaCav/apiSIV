@@ -1,0 +1,5 @@
+:schedule:
+  ScAddWorker:
+    cron: '0 * * * * *'   # Runs once per minute
+    class: ScAddWorker
+    args: ['./cotizaC.mdb']

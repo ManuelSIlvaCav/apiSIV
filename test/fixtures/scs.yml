@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  qad_id: MyString
+  siv_id: MyString
+  rut: MyString
+  client_name: MyString
+  name: MyString
+  sku: MyString
+  umx: MyString
+  siv_code: MyString
+  kind: MyString
+  sub_kind: MyString
+  materials: MyString
+  structure: MyString
+
+two:
+  qad_id: MyString
+  siv_id: MyString
+  rut: MyString
+  client_name: MyString
+  name: MyString
+  sku: MyString
+  umx: MyString
+  siv_code: MyString
+  kind: MyString
+  sub_kind: MyString
+  materials: MyString
+  structure: MyString
