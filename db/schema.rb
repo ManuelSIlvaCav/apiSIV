@@ -10,9 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_09_21_225535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "scs", force: :cascade do |t|
+    t.string "qad_id"
+    t.string "siv_id"
+    t.string "rut"
+    t.string "client_name"
+    t.string "name"
+    t.string "sku"
+    t.string "umx"
+    t.string "siv_code"
+    t.string "kind"
+    t.string "sub_kind"
+    t.string "materials"
+    t.string "structure"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
