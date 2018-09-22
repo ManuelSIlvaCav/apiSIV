@@ -1,12 +1,9 @@
 :schedule:
-<<<<<<< HEAD
-  ScAddWorker:
-    cron: '0 * * * * *'   # Runs once per minute
-    class: ScAddWorker
-    args: ['./cotizaC.mdb']
-=======
+  # ScAddWorker:
+  #   cron: '0 * * * * *'   # Runs once per minute
+  #   class: ScAddWorker
+  #   args: ['./cotizaC.mdb']
   hello_world2:
-    every: '1m'
+    every: '20s'
     #cron: '0 */1 * * * *'
     class: HelloWorld
->>>>>>> manubranch
