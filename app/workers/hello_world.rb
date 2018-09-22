@@ -31,6 +31,8 @@ class HelloWorld
         params[:sub_kind] = row[:subtipoxx]
         params[:materials] = row[:materiales]
         params[:structure] = row[:estructurap]
+        params[:fechacreacion] = row[:fechacrea]
+        params[:fechaval] = row[:fechaval]
         Sc.create(params)
       end
     end

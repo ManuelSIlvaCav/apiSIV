@@ -17,6 +17,8 @@ class ScsController < ApplicationController
       hash[:sub_kind] = row[:sub_kind]
       hash[:materials] = row[:materials]
       hash[:structure] = row[:structure]
+      hash[:fechacrea] = row[:fechacreacion]
+      hash[:fechaval] = row[:fechaval]
       output << hash
     end
 
