@@ -15,12 +15,12 @@ class HelloWorld
   def perform
     params = Hash.new
     db = Mdb.open('/myapp/cotizaC.mdb')
-    lista = Sc.all
     #db = Mdb.open(ruta absoluta)
     scs = db[:sc]
     scs.each do |row|
-      # p row
-      if lista.where(:siv_id => row[:numsiv]).empty?
+      #p Sc.all
+      if Sc.where(:siv_id => row[:numsiv]).empty?
+        p "VERDADERO"
         params[:siv_id] = row[:numsiv]
         params[:qad_id] = row[:codigoqad]#row[:numqad]
         params[:rut] = row[:rutc]

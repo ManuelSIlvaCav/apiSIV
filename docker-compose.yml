@@ -1,13 +1,13 @@
 version: '2'
 
 services:
-  db:
+  postgres:
     image: postgres
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
-    command: rails db:migrate
+      - pgdata:/var/lib/postgresql/data
+
     # ports:
-    #   - "5432:5432"
+    #   - "5433:5432"
 
   web:
     build: .
@@ -17,23 +17,28 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - db
+      - postgres
       - sidekiq
       - redis
+    links:
+      - postgres
+      - sidekiq
+    # environment:
+    #   - RAILS_ENV=production
 
   redis:
     image: redis:3.0.6
     command: redis-server
-    # ports: 
+    # ports:
     #   - 6379:6379
-    
+
   sidekiq:
     build: .
     volumes:
-      - /home/steffan/Documents/PUC/Sem10/Proyecto de Especialidad/probando cosas/my docker apiSIV/apiSIV/cotizaC.mdb:/myapp/cotizaC.mdb 
+      - /home/osboxes/Desktop/Nuevo Git/apiSIV/cotizaC.mdb:/myapp/cotizaC.mdb
       - .:/myapp
     depends_on:
-      - db
+      - postgres
       - redis
     env_file:
       - .env
@@ -44,3 +49,6 @@ services:
 # networks:
 #   dockernet:
 #     external: true
+
+volumes:
+  pgdata: {}
